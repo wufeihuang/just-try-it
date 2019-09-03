@@ -13,7 +13,12 @@ module.exports = {
   node: {
     fs: 'empty'
   },
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: {
+    main: path.resolve(__dirname, 'src/index.js'),
+    react: ['react'],
+    'deck.gl': ['deck.gl'],
+    d3: 'd3',
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -59,16 +64,28 @@ module.exports = {
       filename: '[name].css'
     }),
   ],
-  // optimization: {
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       common: {
-  //         name: 'common',
-  //         chunks: 'all',
-  //         minChunks: 2,
-  //         minSize: 0,
-  //       }
-  //     }
-  //   }
-  // }
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        react: {
+          name: 'react',
+          chunks: 'all',
+          minChunks: 1,
+          minSize: 0,
+        },
+        'deck.gl': {
+          name: 'deck.gl',
+          chunks: 'all',
+          minChunks: 1,
+          minSize: 0,
+        },
+        d3: {
+          name: 'd3',
+          chunks: 'all',
+          minChunks: 1,
+          minSize: 0,
+        },
+      }
+    }
+  }
 }
