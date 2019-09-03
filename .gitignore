@@ -5,7 +5,7 @@
 .history
 
 node_modules
-# dist
+dist
 sth/
 
 todos.md
