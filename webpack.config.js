@@ -51,6 +51,17 @@ module.exports = {
           'babel-loader',
           '@mdx-js/loader',
         ]
+      },
+      {
+        test: /\.csv$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+            },
+          }
+        ]
       }
     ]
   },

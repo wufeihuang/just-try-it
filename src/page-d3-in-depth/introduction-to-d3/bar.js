@@ -1,92 +1,140 @@
-import React from 'react'
+import * as React from 'react'
 import * as d3 from 'd3'
-
-function randomInteger(n) {
-  return Math.floor(10 * Math.random());
-}
-
-function initialiseData() {
-  return [
-    {
-      "name": "Andy",
-      "score": 37
-    },
-    {
-      "name": "Beth",
-      "score": 39
-    },
-    {
-      "name": "Craig",
-      "score": 31
-    },
-    {
-      "name": "Diane",
-      "score": 35
-    },
-    {
-      "name": "Evelyn",
-      "score": 38
-    }
-  ];
-}
+import './bar.css'
 
 export default class DemoBar extends React.Component{
   constructor(props) {
     super(props)
 
-    this.ref = React.createRef()
-    this.data = initialiseData()
-    this.height = 200
-    this.barWidth = 400
-
-    this.box = null
-    this.scale = d3.scaleLinear().domain([0, 100]).range([0, this.barWidth])
+    this.wrapper = React.createRef()
+    this.updateBtn = React.createRef()
+    this.addBtn = React.createRef()
+    this.removeBtn = React.createRef()
   }
 
   componentDidMount() {
-    this.box = d3.select(this.ref.current)
+    const wrapper = d3.select(this.wrapper.current)
     
-    this.updateBars()
+    var names = ['Andy', 'Beth', 'Craig', 'Diane', 'Evelyn', 'Fred', 'Georgia', 'Harry', 'Isabel', 'John'];
+    var myData = [];
+    var barWidth = 400;
+    var barScale = d3.scaleLinear().domain([0, 100]).range([0, barWidth]);
+
+    function randomInteger(n) {
+      return Math.floor(10 * Math.random());
+    }
+
+    function initialiseData() {
+      myData = [
+        {
+          "name": "Andy",
+          "score": 37
+        },
+        {
+          "name": "Beth",
+          "score": 39
+        },
+        {
+          "name": "Craig",
+          "score": 31
+        },
+        {
+          "name": "Diane",
+          "score": 35
+        },
+        {
+          "name": "Evelyn",
+          "score": 38
+        }
+      ];
+    }
+
+    function updateBars(data) {
+      var u = wrapper
+        .selectAll('.person')
+        .data(data, function(d) {
+          return d.name;
+        });
+
+      var entering = u.enter()
+        .append('div')
+        .classed('person', true);
+
+      entering.append('div')
+        .classed('label', true)
+        .text(function(d) {
+          return d.name;
+        });
+
+      entering.append('div')
+        .classed('bar', true);
+
+      entering
+        .merge(u)
+        .select('.bar')
+        .transition()
+        .style('width', function(d) {
+          return barScale(d.score) + 'px';
+        });
+
+      u.exit().remove();
+    }
+
+    function addPerson() {
+      if(myData.length === 10)
+        return;
+
+      myData.push({
+        name: names[myData.length],
+        score: 30 + randomInteger(70)
+      });
+
+      update(myData);
+
+    }
+
+    function removePerson() {
+      if(myData.length === 0)
+        return;
+
+      myData.pop();
+
+      update(myData);
+    }
+
+    function updateScores() {
+      for(var i = 0; i < myData.length; i++) {
+        myData[i].score = 30 + randomInteger(70);
+      }
+
+      update(myData);
+    }
+
+    function update() {
+      updateBars(myData);
+    }
+
+    initialiseData();
+    update(myData);
+
+    d3.select(this.updateBtn.current).on('click', updateScores)
+    d3.select(this.addBtn.current).on('click', addPerson)
+    d3.select(this.removeBtn.current).on('click', removePerson)
   }
 
   render() {
     return (
       <div 
-        ref={this.ref} 
-        style={{
-          height: this.height,
-          border: '1px solid #333',
-          padding: '10px 0',
-          fontSize: 12,
-        }}
-      />
+        className="chart chart-border demo-bar"
+      >
+        <div ref={this.wrapper} className="wrapper" />
+
+        <div className="menu">
+          <button ref={this.updateBtn}>Update scores</button>
+          <button ref={this.addBtn}>Add person</button>
+          <button ref={this.removeBtn}>Remove person</button>
+        </div>
+      </div>
     )
-  }
-
-  // updateScale()
-
-  updateBars() {
-    const {scale} = this
-    const u = this.box.selectAll('div.row')
-      .data(this.data, d => d.name)
-
-    const newDivs = u.enter()
-        .append('div')
-        .style('display', 'flex')
-        .style('align-items', 'center')
-        .style('margin-bottom', '2px')
-
-    newDivs.append('div')
-      .style('width', '60px')
-      .style('text-align', 'right')
-      .text(d => d.name)
-    
-    newDivs.append('div')
-      .style('height', '20px')
-      .style('width', d => `${scale(d.score)}px`)
-      .style('background', 'steelblue')
-      .style('margin-left', '10px')
-
-    u.exit().remove()
   }
 }

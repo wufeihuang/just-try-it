@@ -31,12 +31,7 @@ export class DemoLine extends React.Component{
     return (
       <div 
         ref={this.ref} 
-        style={{
-          height,
-          border: '1px solid #333',
-          padding: '10px 0',
-          fontSize: 12,
-        }}
+        className="chart"
       />
     )
   }
@@ -84,12 +79,7 @@ export class DemoLineCurve extends React.Component{
     return (
       <div 
         ref={this.ref} 
-        style={{
-          height,
-          border: '1px solid #333',
-          padding: '10px 0',
-          fontSize: 12,
-        }}
+        className="chart"
       />
     )
   }

@@ -1,0 +1,32 @@
+.demo-bar .wrapper {
+  height: 220px;
+}
+
+.demo-bar .person {
+  height: 20px;
+  position: relative;
+}
+.demo-bar .person .label {
+  width: 90px;
+  text-align: right;
+}
+.demo-bar .person .bar {
+  height: 19px;
+  background-color: steelblue;
+  position: absolute;
+  left: 100px;
+}
+.demo-bar .person div {
+  display: inline-block;
+}
+
+.demo-bar .menu {
+  text-align: center;
+}
+
+.demo-bar .menu button {
+  padding: 2px 4px;
+  margin: 0 8px;
+  border-radius: 4px;
+  outline: none;
+}

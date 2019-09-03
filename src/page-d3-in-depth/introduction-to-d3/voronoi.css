@@ -1,0 +1,39 @@
+.demo-voronoi path {
+  stroke: #fafafa;
+  fill: white;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.demo-voronoi circle {
+  fill: #888;
+}
+
+.demo-voronoi g.wrapper g.hovered circle {
+	fill: red;
+}
+
+.demo-voronoi g.wrapper .points.voronoi-visible path {
+	stroke: #aaa;
+	opacity: 1;
+	stroke-width: 1px;
+}
+
+.demo-voronoi .halo {
+	stroke-width: 2;
+	fill: none;
+	stroke: black;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.demo-voronoi .menu .item {
+	display: inline-block;
+	margin-right: 10px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.demo-voronoi .menu .item.active {
+	font-weight: bold;
+}

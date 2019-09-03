@@ -1,5 +1,11 @@
 import DemoBar from './bar';
 import {DemoLine, DemoLineCurve} from './lines'
+import {DemoAxis1, DemoAxis2} from './axes'
+import DemoTree from './tree'
+import DemoPack from './pack'
+import DemoTreemap from './treemap'
+import DemoVoronoi from './voronoi'
+import DemoTransition from './transition'
 
 # D3介绍
 > Introduction to D3
@@ -185,15 +191,13 @@ var data = [[0, 50], [100, 80], [200, 40], [300, 60], [400, 30]];
 
 D3还可以创建坐标轴：
 
-----
-一个刻度在下的x坐标轴
-----
+<DemoAxis1 />
+<br />
 
 和大多数D3元素一样，你可以进行很多配置。比如改变坐标轴朝向、刻度的值和格式。
 
----
-一个刻度朝上、刻度文本带有法郎单位、每一千一个逗号的x坐标轴
----
+<DemoAxis2 />
+<br />
 
 ## 布局
 
@@ -201,21 +205,18 @@ D3还可以创建坐标轴：
 
 D3提供了许多帮助你将数据转换成视觉布局的函数，这些函数叫做布局函数（layouts）。例如：如果我们有层级数据（或树状数据 tree shaped），我们可以利用布局函数来创建树图（tree view）：
 
----
-一个树图
----
+<DemoTree />
+<br />
 
 打包图（packed circle view）（包括根据收入决定尺寸的叶子节点）：
 
----
-一个打包图
----
+<DemoPack />
+<br />
 
 矩形树图（treemap）:
 
----
-矩形树图
----
+<DemoTreemap />
+<br />
 
 在这背后，布局函数layout向每个元素上添加属性（比如位置、半径、宽度和高度）。当更新DOM元素时，这些属性就会被使用到。
 
@@ -225,9 +226,8 @@ D3提供了许多帮助你将数据转换成视觉布局的函数，这些函数
 
 D3使得在DOM状态之间进行过渡效果变得很简单。不仅位置和尺寸（比如宽度、高度、半径）可以平滑过渡，颜色也可以：
 
----
-一个颜色过渡的示例
----
+<DemoTransition />
+<br />
 
 除了实现令人愉快的视觉效果，过渡transitions还帮助用户捕捉元素在不同状态之间的变化轨迹。
 
@@ -238,7 +238,7 @@ D3有一些帮助优化用户交互的工具，比如voronoi网格（优化hover
 
 举个🌰，假设我们有很多有悬浮效果的小点，这很难恰好将鼠标放在某个圆的位置上：
 
----
-一个voronoi示例
----
+<DemoVoronoi />
+<br />
+
 然而如果开启了voronoi网格（点击上面的*'Enable Voronoi'*），就可以通过多边形来判断距离用户hover/click/touch位置最近的点。这样定位一个点就容易多了。
