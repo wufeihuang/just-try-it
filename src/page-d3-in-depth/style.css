@@ -1,0 +1,9 @@
+.d3-in-depth a {
+  text-decoration: underline;
+  color: #777;
+  transition: color .15s ease-in;
+}
+
+.d3-in-depth a:hover {
+  color: #ff6300;
+}

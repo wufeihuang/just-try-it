@@ -22,4 +22,5 @@ body{
 .content {
   padding: 16px;
   position: relative;
+  max-width: 1020px;
 }

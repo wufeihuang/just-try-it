@@ -4,11 +4,16 @@ import {Route} from 'react-router-dom'
 import './style.css'
 
 import IntroductionToD3 from './introduction-to-d3'
+import Selections from './selections'
 
 const routes = [
   {
-    path: '/introduce-to-d3',
+    path: 'introduction-to-d3',
     component: IntroductionToD3,
+  },
+  {
+    path: 'selections',
+    component: Selections,
   }
 ]
 
@@ -27,4 +32,6 @@ const Routes = routes.map(item => (
 //   }
 // }
 
-export default IntroductionToD3
+// export default IntroductionToD3
+
+export default Routes

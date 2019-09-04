@@ -27,8 +27,8 @@ function AppRouter() {
           <Route path="/deck" component={Deck} />
           <Route path="/canvas" component={Canvas} />
           <Route path="/d3" component={D3} />
-          <Route path="/d3-in-depth" component={D3InDepth} />
-          {/* {D3InDepth} */}
+          {/* <Route path="/d3-in-depth" component={D3InDepth} /> */}
+          {D3InDepth}
         </div>
       </div>
     </Router>

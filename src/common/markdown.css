@@ -30,3 +30,19 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.markdown table {
+  width: 100%;
+  font-size: 0.9em;
+  margin-bottom: 2em;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.markdown table th,
+.markdown table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  line-height: 1.5em;
+  text-align: left;
+}

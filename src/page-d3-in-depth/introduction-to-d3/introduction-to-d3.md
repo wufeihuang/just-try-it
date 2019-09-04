@@ -81,6 +81,9 @@ D3的功能包括：
 - 根据分数（score）更新柱子的长度
 
 <DemoBar />
+
+> [源码](https://bl.ocks.org/d3indepth/e890d5ad36af3d949f275e35b41a99d6)
+
 <br/>
 
 ## 数据转换
@@ -182,22 +185,34 @@ var data = [[0, 50], [100, 80], [200, 40], [300, 60], [400, 30]];
 将它们用线连起来，通过D3可以生成如下SVG：
 
 <DemoLine />
+
+> [源码](https://bl.ocks.org/d3indepth/e312c205b6b07757551bffafb265589b)
+
 <br/>
 
 你可以选择使用曲线插值的能力：
 
 <DemoLineCurve />
+
+> [源码](https://bl.ocks.org/d3indepth/2bfe90c7603a062644fc14a866c13f79)
+
 <br/>
 
 D3还可以创建坐标轴：
 
 <DemoAxis1 />
-<br />
+
+> [源码](https://bl.ocks.org/d3indepth/91a677b1246d2bfe28a6d27adf522d70)
+
+<br/>
 
 和大多数D3元素一样，你可以进行很多配置。比如改变坐标轴朝向、刻度的值和格式。
 
 <DemoAxis2 />
-<br />
+
+> [源码](https://bl.ocks.org/d3indepth/65fec76009499a2cd17d902021528e23)
+
+<br/>
 
 ## 布局
 
@@ -206,17 +221,26 @@ D3还可以创建坐标轴：
 D3提供了许多帮助你将数据转换成视觉布局的函数，这些函数叫做布局函数（layouts）。例如：如果我们有层级数据（或树状数据 tree shaped），我们可以利用布局函数来创建树图（tree view）：
 
 <DemoTree />
-<br />
+
+> [源码](https://bl.ocks.org/d3indepth/2815bd8c7d0f00580a64bdea6c8513f6)
+
+<br/>
 
 打包图（packed circle view）（包括根据收入决定尺寸的叶子节点）：
 
 <DemoPack />
-<br />
+
+> [源码](https://bl.ocks.org/d3indepth/e3b16f8ca441adfe4ffcd2f6d7b0bba5)
+
+<br/>
 
 矩形树图（treemap）:
 
 <DemoTreemap />
-<br />
+
+> [源码](https://bl.ocks.org/d3indepth/502c024a398dc772fe947905f217dab3)
+
+<br/>
 
 在这背后，布局函数layout向每个元素上添加属性（比如位置、半径、宽度和高度）。当更新DOM元素时，这些属性就会被使用到。
 
@@ -227,7 +251,10 @@ D3提供了许多帮助你将数据转换成视觉布局的函数，这些函数
 D3使得在DOM状态之间进行过渡效果变得很简单。不仅位置和尺寸（比如宽度、高度、半径）可以平滑过渡，颜色也可以：
 
 <DemoTransition />
-<br />
+
+> [源码](https://bl.ocks.org/d3indepth/16c3036242d93526f3e18c60266b154e)
+
+<br/>
 
 除了实现令人愉快的视觉效果，过渡transitions还帮助用户捕捉元素在不同状态之间的变化轨迹。
 
@@ -239,6 +266,9 @@ D3有一些帮助优化用户交互的工具，比如voronoi网格（优化hover
 举个🌰，假设我们有很多有悬浮效果的小点，这很难恰好将鼠标放在某个圆的位置上：
 
 <DemoVoronoi />
-<br />
+
+> [源码](https://bl.ocks.org/d3indepth/ee5a4b110b9841cc55dbba0716343143)
+
+<br/>
 
 然而如果开启了voronoi网格（点击上面的*'Enable Voronoi'*），就可以通过多边形来判断距离用户hover/click/touch位置最近的点。这样定位一个点就容易多了。
