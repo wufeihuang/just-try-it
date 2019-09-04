@@ -8,7 +8,7 @@ import Abc from './page-abc'
 import Deck from './page-deck-gl'
 import Canvas from './page-canvas'
 import D3 from './page-d3'
-import D3InDepth from './page-d3-in-depth'
+import D3InDepthRoutes from './page-d3-in-depth'
 
 function AppRouter() {
   return (
@@ -28,7 +28,7 @@ function AppRouter() {
           <Route path="/canvas" component={Canvas} />
           <Route path="/d3" component={D3} />
           {/* <Route path="/d3-in-depth" component={D3InDepth} /> */}
-          {D3InDepth}
+          {D3InDepthRoutes}
         </div>
       </div>
     </Router>

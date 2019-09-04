@@ -22,15 +22,6 @@
   font-size: 12px;
 }
 
-.markdown .chart {
-  padding: 10px 0;
-  font-size: 12px;
-}
-.markdown .chart-border {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .markdown table {
   width: 100%;
   font-size: 0.9em;
@@ -45,4 +36,17 @@
   padding: 8px;
   line-height: 1.5em;
   text-align: left;
+}
+
+.markdown h2 {
+  margin-top: 30px;
+}
+
+.markdown .chart {
+  padding: 10px 0;
+  font-size: 12px;
+}
+.markdown .chart-border {
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

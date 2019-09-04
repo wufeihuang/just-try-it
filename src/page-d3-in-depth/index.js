@@ -5,6 +5,7 @@ import './style.css'
 
 import IntroductionToD3 from './introduction-to-d3'
 import Selections from './selections'
+import DataJoins from './data-joins'
 
 const routes = [
   {
@@ -14,24 +15,15 @@ const routes = [
   {
     path: 'selections',
     component: Selections,
+  },
+  {
+    path: 'joins',
+    component: DataJoins,
   }
 ]
 
 const Routes = routes.map(item => (
   <Route key={item.path} exact  path={`/d3-in-depth/${item.path}`} component={item.component} />
 ))
-
-// export default class D3InDepth extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         ddd
-//         {Routes}
-//       </div>
-//     )
-//   }
-// }
-
-// export default IntroductionToD3
 
 export default Routes
