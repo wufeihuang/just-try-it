@@ -6,6 +6,7 @@ import './style.css'
 import IntroductionToD3 from './introduction-to-d3'
 import Selections from './selections'
 import DataJoins from './data-joins'
+import EnterAndExit from './enter-and-exit'
 
 const routes = [
   {
@@ -19,7 +20,11 @@ const routes = [
   {
     path: 'joins',
     component: DataJoins,
-  }
+  },
+  {
+    path: 'enter-and-exit',
+    component: EnterAndExit,
+  },
 ]
 
 const Routes = routes.map(item => (

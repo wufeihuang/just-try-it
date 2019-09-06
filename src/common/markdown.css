@@ -16,6 +16,12 @@
   border-radius: 4px;
 }
 
+.markdown code {
+  padding: 0 3px;
+  font-size: 0.9em;
+  color: #111
+}
+
 .markdown blockquote {
   border-left: 2px solid #eee;
   padding-left: 10px;

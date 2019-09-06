@@ -61,7 +61,7 @@ export default function() {
           <Link to="/d3-in-depth/joins">Joins</Link>
         </Menu.Item>
         <Menu.Item key="4">
-          <Link to="/d3-in-depth/enter-exit">Enter/exit</Link>
+          <Link to="/d3-in-depth/enter-and-exit">Enter/exit</Link>
         </Menu.Item>
         <Menu.Item key="5">
           <Link to="/d3-in-depth/scales">Scales</Link>

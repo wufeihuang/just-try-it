@@ -72,31 +72,31 @@ module.exports = {
       template: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: 'style.css'
     }),
   ],
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        react: {
-          name: 'react',
-          chunks: 'all',
-          minChunks: 1,
-          minSize: 0,
-        },
-        'deck.gl': {
-          name: 'deck.gl',
-          chunks: 'all',
-          minChunks: 1,
-          minSize: 0,
-        },
-        d3: {
-          name: 'd3',
-          chunks: 'all',
-          minChunks: 1,
-          minSize: 0,
-        },
-      }
-    }
-  }
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       react: {
+  //         name: 'react',
+  //         chunks: 'all',
+  //         minChunks: 1,
+  //         minSize: 0,
+  //       },
+  //       'deck.gl': {
+  //         name: 'deck.gl',
+  //         chunks: 'all',
+  //         minChunks: 1,
+  //         minSize: 0,
+  //       },
+  //       d3: {
+  //         name: 'd3',
+  //         chunks: 'all',
+  //         minChunks: 1,
+  //         minSize: 0,
+  //       },
+  //     }
+  //   }
+  // }
 }
