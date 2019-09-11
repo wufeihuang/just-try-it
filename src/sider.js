@@ -8,7 +8,7 @@ export default function() {
   return (
     <Menu
       style={{ width: 256 }}
-      // defaultOpenKeys={['d3-in-depth']}
+      defaultOpenKeys={['d3-in-depth']}
       mode="inline"
     >
       <SubMenu

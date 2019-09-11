@@ -8,6 +8,7 @@ import Selections from './selections'
 import DataJoins from './data-joins'
 import EnterAndExit from './enter-and-exit'
 import Scales from './scales'
+import Shapes from './shapes'
 
 const routes = [
   {
@@ -29,6 +30,10 @@ const routes = [
   {
     path: 'scales',
     component: Scales,
+  },
+  {
+    path: 'shapes',
+    component: Shapes,
   }
 ]
 
