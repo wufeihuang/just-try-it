@@ -7,6 +7,7 @@ import IntroductionToD3 from './introduction-to-d3'
 import Selections from './selections'
 import DataJoins from './data-joins'
 import EnterAndExit from './enter-and-exit'
+import Scales from './scales'
 
 const routes = [
   {
@@ -25,6 +26,10 @@ const routes = [
     path: 'enter-and-exit',
     component: EnterAndExit,
   },
+  {
+    path: 'scales',
+    component: Scales,
+  }
 ]
 
 const Routes = routes.map(item => (
