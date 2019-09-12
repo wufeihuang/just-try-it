@@ -9,6 +9,9 @@ import DataJoins from './data-joins'
 import EnterAndExit from './enter-and-exit'
 import Scales from './scales'
 import Shapes from './shapes'
+import Layouts from './layouts'
+import Force from './force'
+import Geographic from './geographic'
 
 const routes = [
   {
@@ -34,6 +37,18 @@ const routes = [
   {
     path: 'shapes',
     component: Shapes,
+  },
+  {
+    path: 'layouts',
+    component: Layouts,
+  },
+  {
+    path: 'force',
+    component: Force,
+  },
+  {
+    path: 'geographic',
+    component: Geographic,
   }
 ]
 
